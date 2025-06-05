@@ -15,12 +15,12 @@ then import in Python
 
 ```Python 
 import pyecotoxsystems as ets
-import matplotlib.pyplot as plt
 ```
 
 Doing this for the first time triggers the installation of Julia dependencies, which takes a few minutes. These should be one-time costs, however.
 
 ```Python
+import matplotlib.pyplot as plt
 p = ets.defaultparams
 sim = ets.ODE_simulator(p) # run the default simulation
 plt.plot(sim.t, sim.S) # plot growth trajectory
