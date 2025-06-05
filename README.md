@@ -38,9 +38,3 @@ sim = ets.IBM_simulator(p) # run the default IBM simulation
 plt.plot(sim.glb.t, sim.glb.N) # plot population trajectory
 plt.show()
 ```
-
-
-
-
-
-
