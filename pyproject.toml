@@ -1,0 +1,16 @@
+[project]
+name = "pyecotoxsystems"
+version = "0.1.0"
+description = "Python wrapper for EcotoxSystems.jl"
+authors = [{ name = "Simon Hansul", email = "simonhansul@gmail.com" }]
+dependencies = [
+    "juliacall",
+    "juliapkg",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+test = ["pytest"]
