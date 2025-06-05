@@ -1,19 +1,13 @@
-# pyecotoxsystems/__init__.py
-from .setup_julia import jl  # Make sure Julia is ready
+from .setup_julia import jl
 
-# Load package explicitly
-jl.seval("using EcotoxSystems")
+# Get exported names and convert symbols to strings
+exported = jl.seval("""[String(sym) for sym in names(EcotoxSystems; all=false, imported=false)]""")
 
-# Dynamically re-export all exported functions
-_exported = jl.seval("names(EcotoxSystems, all=false)")
+__all__ = exported  # now __all__ is a list of strings
 
-__all__ = []
-
-for name in _exported:
-    # Get reference to function
+# Dynamically re-export
+for name in exported:
     try:
-        func = jl.eval(f"EcotoxSystems.{name}")
-        globals()[name] = func
-        __all__.append(name)
+        globals()[name] = getattr(jl.EcotoxSystems, name)
     except Exception as e:
-        print(f"Skipping {name}: {e}", file=sys.stderr)
+        print(f"Warning: could not import {name}: {e}")
