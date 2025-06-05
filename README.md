@@ -8,7 +8,7 @@ This package makes implementations from [EcotoxSystems.jl](https://github.com/Si
 Install from github
 
 ```bash
-pip install git+https://github.com/simonhansul/ecotoxsystems.jl
+pip install git+https://github.com/simonhansul/pyecotoxsystems.git
 ```
 
 then import in Python
