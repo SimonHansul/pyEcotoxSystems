@@ -38,3 +38,8 @@ sim = ets.IBM_simulator(p) # run the default IBM simulation
 plt.plot(sim.glb.t, sim.glb.N) # plot population trajectory
 plt.show()
 ```
+
+## TODO
+
+- [ ] Fit a Julia model with pyABC (or other Python fitting packages)
+- [ ] Treating models as individual modules, couple a Julia model to a Python model
